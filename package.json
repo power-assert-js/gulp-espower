@@ -1,0 +1,52 @@
+{
+  "name": "gulp-espower",
+  "version": "0.3.0",
+  "description": "A gulp plugin to apply espower to target files",
+  "keywords": [
+    "test",
+    "assert",
+    "testing",
+    "ecmascript",
+    "ast",
+    "gulpplugin"
+  ],
+  "homepage": "https://github.com/twada/gulp-espower",
+  "bugs": "https://github.com/twada/gulp-espower/issues",
+  "author": {
+    "name": "Takuto Wada",
+    "email": "takuto.wada@gmail.com",
+    "url": "https://github.com/twada"
+  },
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/twada/gulp-espower.git"
+  },
+  "scripts": {
+    "jshint": "./node_modules/jshint/bin/jshint index.js",
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "dependencies": {
+    "event-stream": "~3.0.20",
+    "espower": "~0.3.1",
+    "esprima": "~1.0.4",
+    "escodegen": "~1.0.1",
+    "lodash.merge": "~2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.16.2",
+    "should": "~2.1.0",
+    "gulp-util": "~2.2.0",
+    "jshint": "~2.4.1"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/twada/gulp-espower/master/LICENSE-MIT"
+    }
+  ]
+}
