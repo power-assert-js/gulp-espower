@@ -1,9 +1,11 @@
 /*
- * gulp-espower
+ * gulp-espower - A gulp plugin to apply espower to target files.
+ * 
  * https://github.com/twada/gulp-espower
  *
  * Copyright (c) 2013-2014 Takuto Wada
  * Licensed under the MIT license.
+ *   https://raw.github.com/twada/gulp-espower/master/LICENSE-MIT
  */
 var es = require('event-stream'),
     espower = require('espower'),
