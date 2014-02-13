@@ -30,13 +30,13 @@
     "event-stream": "~3.1.0",
     "espower": "~0.3.1",
     "esprima": "~1.0.4",
-    "escodegen": "~1.1.0",
+    "escodegen": "~1.2.0",
     "lodash.merge": "~2.4.1"
   },
   "devDependencies": {
     "mocha": "~1.17.1",
-    "should": "~3.1.0",
-    "gulp-util": "~2.2.12",
+    "should": "~3.1.2",
+    "gulp-util": "~2.2.14",
     "jshint": "~2.4.3"
   },
   "engines": {
