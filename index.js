@@ -24,7 +24,7 @@ module.exports = function (opt) {
             cb(new Error('gulp-espower: Streaming not supported'));
         } else {
             jsCode = file.contents.toString('utf8');
-            jsAst = esprima.parse(jsCode, {tolerant: true, loc: true, range: true});
+            jsAst = esprima.parse(jsCode, {tolerant: true, loc: true, range: true, tokens: true});
             espowerOptions = merge(merge(espower.defaultOptions(), opt), {
                 path: file.path,
                 source: jsCode
