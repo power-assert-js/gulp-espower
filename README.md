@@ -1,6 +1,6 @@
 # gulp-espower [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
-> espower plugin for [gulp](https://github.com/wearefractal/gulp)
+> A [gulp](https://github.com/wearefractal/gulp) plugin for [power-assert](http://github.com/twada/power-assert).
 
 ## Description
 `gulp-espower` is a gulp plugin to instrument "Power Assert" feature into your code.
@@ -33,12 +33,6 @@ gulp.src("./test/*.js")
 ## API
 
 ### espower(options)
-
-#### options.destructive
-Type: `Boolean`
-Default value: `false`
-
-Instrument target AST destructively or not.
 
 #### options.powerAssertVariableName
 Type: `String`
@@ -83,10 +77,10 @@ Target assertion methods to insrtument.
 Licensed under the [MIT](https://raw.github.com/twada/gulp-espower/master/LICENSE-MIT) license.
 
 [npm-url]: https://npmjs.org/package/gulp-espower
-[npm-image]: https://badge.fury.io/js/gulp-espower.png
+[npm-image]: https://badge.fury.io/js/gulp-espower.svg
 
 [travis-url]: http://travis-ci.org/twada/gulp-espower
-[travis-image]: https://secure.travis-ci.org/twada/gulp-espower.png?branch=master
+[travis-image]: https://secure.travis-ci.org/twada/gulp-espower.svg?branch=master
 
 [depstat-url]: https://gemnasium.com/twada/gulp-espower
-[depstat-image]: https://gemnasium.com/twada/gulp-espower.png
+[depstat-image]: https://gemnasium.com/twada/gulp-espower.svg
