@@ -4,51 +4,135 @@ var empower = require('empower'), formatter = require('power-assert-formatter'),
             twoArgs: ['same']
         }
     }), truthy = 'true', falsy = 'false';
-refute(refute._expr(refute._capt(truthy, 'ident', {
-    start: {
-        line: 7,
-        column: 7
-    }
-}), {
-    start: {
-        line: 7,
-        column: 7
+refute(refute._expr(refute._capt(truthy, ''), {
+    tree: {
+        'type': 'Identifier',
+        'name': 'truthy',
+        'loc': {
+            'start': {
+                'line': 7,
+                'column': 7
+            },
+            'end': {
+                'line': 7,
+                'column': 13
+            },
+            'source': 'test/fixtures/customized.js'
+        }
     },
-    path: 'test/fixtures/customized.js'
-}, 'refute(truthy);'));
-refute.isNull(refute._expr(refute._capt(falsy, 'ident', {
-    start: {
-        line: 8,
-        column: 14
-    }
-}), {
-    start: {
-        line: 8,
-        column: 14
+    tokens: [{
+            'type': 'Identifier',
+            'value': 'truthy',
+            'loc': {
+                'start': {
+                    'line': 7,
+                    'column': 7
+                },
+                'end': {
+                    'line': 7,
+                    'column': 13
+                }
+            }
+        }],
+    content: 'refute(truthy);',
+    filepath: 'test/fixtures/customized.js'
+}));
+refute.isNull(refute._expr(refute._capt(falsy, ''), {
+    tree: {
+        'type': 'Identifier',
+        'name': 'falsy',
+        'loc': {
+            'start': {
+                'line': 8,
+                'column': 14
+            },
+            'end': {
+                'line': 8,
+                'column': 19
+            },
+            'source': 'test/fixtures/customized.js'
+        }
     },
-    path: 'test/fixtures/customized.js'
-}, 'refute.isNull(falsy);'));
-refute.same(refute._expr(refute._capt(truthy, 'ident', {
-    start: {
-        line: 9,
-        column: 12
-    }
-}), {
-    start: {
-        line: 9,
-        column: 12
+    tokens: [{
+            'type': 'Identifier',
+            'value': 'falsy',
+            'loc': {
+                'start': {
+                    'line': 8,
+                    'column': 14
+                },
+                'end': {
+                    'line': 8,
+                    'column': 19
+                }
+            }
+        }],
+    content: 'refute.isNull(falsy);',
+    filepath: 'test/fixtures/customized.js'
+}));
+refute.same(refute._expr(refute._capt(truthy, ''), {
+    tree: {
+        'type': 'Identifier',
+        'name': 'truthy',
+        'loc': {
+            'start': {
+                'line': 9,
+                'column': 12
+            },
+            'end': {
+                'line': 9,
+                'column': 18
+            },
+            'source': 'test/fixtures/customized.js'
+        }
     },
-    path: 'test/fixtures/customized.js'
-}, 'refute.same(truthy, falsy);'), refute._expr(refute._capt(falsy, 'ident', {
-    start: {
-        line: 9,
-        column: 20
-    }
-}), {
-    start: {
-        line: 9,
-        column: 20
+    tokens: [{
+            'type': 'Identifier',
+            'value': 'truthy',
+            'loc': {
+                'start': {
+                    'line': 9,
+                    'column': 12
+                },
+                'end': {
+                    'line': 9,
+                    'column': 18
+                }
+            }
+        }],
+    content: 'refute.same(truthy, falsy);',
+    filepath: 'test/fixtures/customized.js'
+}), refute._expr(refute._capt(falsy, ''), {
+    tree: {
+        'type': 'Identifier',
+        'name': 'falsy',
+        'loc': {
+            'start': {
+                'line': 9,
+                'column': 20
+            },
+            'end': {
+                'line': 9,
+                'column': 25
+            },
+            'source': 'test/fixtures/customized.js'
+        }
     },
-    path: 'test/fixtures/customized.js'
-}, 'refute.same(truthy, falsy);'));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QvZml4dHVyZXMvY3VzdG9taXplZC5qcyJdLCJuYW1lcyI6WyJlbXBvd2VyIiwicmVxdWlyZSIsImZvcm1hdHRlciIsImJ1c3RlckFzc2VydGlvbnMiLCJyZWZ1dGUiLCJ0YXJnZXRNZXRob2RzIiwib25lQXJnIiwidHdvQXJncyIsInRydXRoeSIsImZhbHN5IiwiX2V4cHIiLCJfY2FwdCIsInN0YXJ0IiwibGluZSIsImNvbHVtbiIsInBhdGgiLCJpc051bGwiLCJzYW1lIl0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxPQUFBLEdBQVVDLE9BQUEsQ0FBUSxTQUFSLENBQWQsRUFDSUMsU0FBQSxHQUFZRCxPQUFBLENBQVEsd0JBQVIsQ0FEaEIsRUFFSUUsZ0JBQUEsR0FBbUJGLE9BQUEsQ0FBUSxtQkFBUixDQUZ2QixFQUdJRyxNQUFBLEdBQVNKLE9BQUEsQ0FBUUcsZ0JBQUEsQ0FBaUJDLE1BQXpCLEVBQWlDRixTQUFBLEVBQWpDLEVBQThDO0FBQUEsUUFBRUcsYUFBQSxFQUFlO0FBQUEsWUFBRUMsTUFBQSxFQUFRLENBQUMsUUFBRCxDQUFWO0FBQUEsWUFBc0JDLE9BQUEsRUFBUyxDQUFDLE1BQUQsQ0FBL0I7QUFBQSxTQUFqQjtBQUFBLEtBQTlDLENBSGIsRUFJSUMsTUFBQSxHQUFTLE1BSmIsRUFLSUMsS0FBQSxHQUFRLE9BTFo7QUFNQUwsTUFBQSxDQUFPQSxNQUFBLENBQUFNLEtBQUEsQ0FBQU4sTUFBQSxDQUFBTyxLQUFBLENBQUFILE1BQUE7QUFBQSxJQUFBSSxLQUFBO0FBQUEsUUFBQUMsSUFBQTtBQUFBLFFBQUFDLE1BQUE7QUFBQTtBQUFBO0FBQUEsSUFBQUYsS0FBQTtBQUFBLFFBQUFDLElBQUE7QUFBQSxRQUFBQyxNQUFBO0FBQUE7QUFBQSxJQUFBQyxJQUFBO0FBQUEscUJBQVAsRUFOQTtBQU9BWCxNQUFBLENBQU9ZLE1BQVAsQ0FBY1osTUFBQSxDQUFBTSxLQUFBLENBQUFOLE1BQUEsQ0FBQU8sS0FBQSxDQUFBRixLQUFBO0FBQUEsSUFBQUcsS0FBQTtBQUFBLFFBQUFDLElBQUE7QUFBQSxRQUFBQyxNQUFBO0FBQUE7QUFBQTtBQUFBLElBQUFGLEtBQUE7QUFBQSxRQUFBQyxJQUFBO0FBQUEsUUFBQUMsTUFBQTtBQUFBO0FBQUEsSUFBQUMsSUFBQTtBQUFBLDJCQUFkLEVBUEE7QUFRQVgsTUFBQSxDQUFPYSxJQUFQLENBQVliLE1BQUEsQ0FBQU0sS0FBQSxDQUFBTixNQUFBLENBQUFPLEtBQUEsQ0FBQUgsTUFBQTtBQUFBLElBQUFJLEtBQUE7QUFBQSxRQUFBQyxJQUFBO0FBQUEsUUFBQUMsTUFBQTtBQUFBO0FBQUE7QUFBQSxJQUFBRixLQUFBO0FBQUEsUUFBQUMsSUFBQTtBQUFBLFFBQUFDLE1BQUE7QUFBQTtBQUFBLElBQUFDLElBQUE7QUFBQSxpQ0FBWixFQUFvQlgsTUFBQSxDQUFBTSxLQUFBLENBQUFOLE1BQUEsQ0FBQU8sS0FBQSxDQUFBRixLQUFBO0FBQUEsSUFBQUcsS0FBQTtBQUFBLFFBQUFDLElBQUE7QUFBQSxRQUFBQyxNQUFBO0FBQUE7QUFBQTtBQUFBLElBQUFGLEtBQUE7QUFBQSxRQUFBQyxJQUFBO0FBQUEsUUFBQUMsTUFBQTtBQUFBO0FBQUEsSUFBQUMsSUFBQTtBQUFBLGlDQUFwQiIsInNvdXJjZXNDb250ZW50IjpbInZhciBlbXBvd2VyID0gcmVxdWlyZSgnZW1wb3dlcicpLFxuICAgIGZvcm1hdHRlciA9IHJlcXVpcmUoJ3Bvd2VyLWFzc2VydC1mb3JtYXR0ZXInKSxcbiAgICBidXN0ZXJBc3NlcnRpb25zID0gcmVxdWlyZShcImJ1c3Rlci1hc3NlcnRpb25zXCIpLFxuICAgIHJlZnV0ZSA9IGVtcG93ZXIoYnVzdGVyQXNzZXJ0aW9ucy5yZWZ1dGUsIGZvcm1hdHRlcigpLCB7IHRhcmdldE1ldGhvZHM6IHsgb25lQXJnOiBbJ2lzTnVsbCddLCB0d29BcmdzOiBbJ3NhbWUnXSB9IH0pLFxuICAgIHRydXRoeSA9ICd0cnVlJyxcbiAgICBmYWxzeSA9ICdmYWxzZSc7XG5yZWZ1dGUodHJ1dGh5KTtcbnJlZnV0ZS5pc051bGwoZmFsc3kpO1xucmVmdXRlLnNhbWUodHJ1dGh5LCBmYWxzeSk7XG4iXX0=
+    tokens: [{
+            'type': 'Identifier',
+            'value': 'falsy',
+            'loc': {
+                'start': {
+                    'line': 9,
+                    'column': 20
+                },
+                'end': {
+                    'line': 9,
+                    'column': 25
+                }
+            }
+        }],
+    content: 'refute.same(truthy, falsy);',
+    filepath: 'test/fixtures/customized.js'
+}));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QvZml4dHVyZXMvY3VzdG9taXplZC5qcyJdLCJuYW1lcyI6WyJlbXBvd2VyIiwicmVxdWlyZSIsImZvcm1hdHRlciIsImJ1c3RlckFzc2VydGlvbnMiLCJyZWZ1dGUiLCJ0YXJnZXRNZXRob2RzIiwib25lQXJnIiwidHdvQXJncyIsInRydXRoeSIsImZhbHN5IiwiX2V4cHIiLCJfY2FwdCIsInRyZWUiLCJ0b2tlbnMiLCJjb250ZW50IiwiZmlsZXBhdGgiLCJpc051bGwiLCJzYW1lIl0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxPQUFBLEdBQVVDLE9BQUEsQ0FBUSxTQUFSLENBQWQsRUFDSUMsU0FBQSxHQUFZRCxPQUFBLENBQVEsd0JBQVIsQ0FEaEIsRUFFSUUsZ0JBQUEsR0FBbUJGLE9BQUEsQ0FBUSxtQkFBUixDQUZ2QixFQUdJRyxNQUFBLEdBQVNKLE9BQUEsQ0FBUUcsZ0JBQUEsQ0FBaUJDLE1BQXpCLEVBQWlDRixTQUFBLEVBQWpDLEVBQThDO0FBQUEsUUFBRUcsYUFBQSxFQUFlO0FBQUEsWUFBRUMsTUFBQSxFQUFRLENBQUMsUUFBRCxDQUFWO0FBQUEsWUFBc0JDLE9BQUEsRUFBUyxDQUFDLE1BQUQsQ0FBL0I7QUFBQSxTQUFqQjtBQUFBLEtBQTlDLENBSGIsRUFJSUMsTUFBQSxHQUFTLE1BSmIsRUFLSUMsS0FBQSxHQUFRLE9BTFo7QUFNQUwsTUFBQSxDQUFPQSxNQUFBLENBQUFNLEtBQUEsQ0FBQU4sTUFBQSxDQUFBTyxLQUFBLENBQUFILE1BQUE7QUFBQSxJQUFBSSxJQUFBLEU7Ozs7Ozs7Ozs7Ozs7O0tBQUE7QUFBQSxJQUFBQyxNQUFBLEU7Ozs7Ozs7Ozs7Ozs7VUFBQTtBQUFBLElBQUFDLE9BQUE7QUFBQSxJQUFBQyxRQUFBO0FBQUEsRUFBUCxFQU5BO0FBT0FYLE1BQUEsQ0FBT1ksTUFBUCxDQUFjWixNQUFBLENBQUFNLEtBQUEsQ0FBQU4sTUFBQSxDQUFBTyxLQUFBLENBQUFGLEtBQUE7QUFBQSxJQUFBRyxJQUFBLEU7Ozs7Ozs7Ozs7Ozs7O0tBQUE7QUFBQSxJQUFBQyxNQUFBLEU7Ozs7Ozs7Ozs7Ozs7VUFBQTtBQUFBLElBQUFDLE9BQUE7QUFBQSxJQUFBQyxRQUFBO0FBQUEsRUFBZCxFQVBBO0FBUUFYLE1BQUEsQ0FBT2EsSUFBUCxDQUFZYixNQUFBLENBQUFNLEtBQUEsQ0FBQU4sTUFBQSxDQUFBTyxLQUFBLENBQUFILE1BQUE7QUFBQSxJQUFBSSxJQUFBLEU7Ozs7Ozs7Ozs7Ozs7O0tBQUE7QUFBQSxJQUFBQyxNQUFBLEU7Ozs7Ozs7Ozs7Ozs7VUFBQTtBQUFBLElBQUFDLE9BQUE7QUFBQSxJQUFBQyxRQUFBO0FBQUEsRUFBWixFQUFvQlgsTUFBQSxDQUFBTSxLQUFBLENBQUFOLE1BQUEsQ0FBQU8sS0FBQSxDQUFBRixLQUFBO0FBQUEsSUFBQUcsSUFBQSxFOzs7Ozs7Ozs7Ozs7OztLQUFBO0FBQUEsSUFBQUMsTUFBQSxFOzs7Ozs7Ozs7Ozs7O1VBQUE7QUFBQSxJQUFBQyxPQUFBO0FBQUEsSUFBQUMsUUFBQTtBQUFBLEVBQXBCIiwic291cmNlc0NvbnRlbnQiOlsidmFyIGVtcG93ZXIgPSByZXF1aXJlKCdlbXBvd2VyJyksXG4gICAgZm9ybWF0dGVyID0gcmVxdWlyZSgncG93ZXItYXNzZXJ0LWZvcm1hdHRlcicpLFxuICAgIGJ1c3RlckFzc2VydGlvbnMgPSByZXF1aXJlKFwiYnVzdGVyLWFzc2VydGlvbnNcIiksXG4gICAgcmVmdXRlID0gZW1wb3dlcihidXN0ZXJBc3NlcnRpb25zLnJlZnV0ZSwgZm9ybWF0dGVyKCksIHsgdGFyZ2V0TWV0aG9kczogeyBvbmVBcmc6IFsnaXNOdWxsJ10sIHR3b0FyZ3M6IFsnc2FtZSddIH0gfSksXG4gICAgdHJ1dGh5ID0gJ3RydWUnLFxuICAgIGZhbHN5ID0gJ2ZhbHNlJztcbnJlZnV0ZSh0cnV0aHkpO1xucmVmdXRlLmlzTnVsbChmYWxzeSk7XG5yZWZ1dGUuc2FtZSh0cnV0aHksIGZhbHN5KTtcbiJdfQ==
