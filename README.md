@@ -40,12 +40,6 @@ Default value: `'assert'`
 
 Target variable name to instrument.
 
-#### options.lineSeparator
-Type: `String`
-Default value: `'\n'`
-
-Line separator in target sources.
-
 #### options.targetMethods
 Type: `Object`
 Default value: 
