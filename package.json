@@ -28,13 +28,13 @@
     "test": "./node_modules/mocha/bin/mocha"
   },
   "dependencies": {
-    "espower-source": "~0.7.0",
-    "event-stream": "~3.1.0"
+    "espower-source": "~0.7.1",
+    "event-stream": "~3.1.5"
   },
   "devDependencies": {
     "gulp-util": "~2.2.14",
-    "jshint": "~2.5.0",
-    "mocha": "~1.18.2"
+    "jshint": "~2.5.1",
+    "mocha": "~1.19.0"
   },
   "engines": {
     "node": ">=0.8.0",
