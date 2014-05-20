@@ -68,7 +68,7 @@ Target assertion methods to insrtument.
 
 ## License
 
-Licensed under the [MIT](https://raw.github.com/twada/gulp-espower/master/LICENSE-MIT) license.
+Licensed under the [MIT](https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT) license.
 
 [npm-url]: https://npmjs.org/package/gulp-espower
 [npm-image]: https://badge.fury.io/js/gulp-espower.svg

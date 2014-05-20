@@ -5,7 +5,7 @@
  *
  * Copyright (c) 2013-2014 Takuto Wada
  * Licensed under the MIT license.
- *   https://raw.github.com/twada/gulp-espower/master/LICENSE-MIT
+ *   https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT
  */
 var es = require('event-stream'),
     espowerSourceToSource = require('espower-source');
