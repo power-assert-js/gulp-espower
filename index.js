@@ -8,7 +8,7 @@
  *   https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT
  */
 var es = require('event-stream'),
-    espowerSourceToSource = require('espower-source');
+    espowerSource = require('espower-source');
 
 module.exports = function (opt) {
     'use strict';
@@ -19,7 +19,7 @@ module.exports = function (opt) {
         } else if (file.isStream()) {
             cb(new Error('gulp-espower: Streaming not supported'));
         } else {
-            file.contents = new Buffer(espowerSourceToSource(file.contents.toString('utf8'), file.path, opt));
+            file.contents = new Buffer(espowerSource(file.contents.toString('utf8'), file.path, opt));
             cb(null, file);
         }
     }
