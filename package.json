@@ -19,6 +19,13 @@
     "url": "https://github.com/twada"
   },
   "main": "./index.js",
+  "files": [
+    "LICENSE-MIT",
+    "README.md",
+    "index.js",
+    "package.json",
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/twada/gulp-espower.git"
