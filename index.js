@@ -7,22 +7,35 @@
  * Licensed under the MIT license.
  *   https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT
  */
-var es = require('event-stream'),
+var through = require('through2'),
+    gutil = require('gulp-util'),
+    BufferStreams = require('bufferstreams'),
     espowerSource = require('espower-source');
 
 module.exports = function (opt) {
     'use strict';
 
-    function instrument(file, cb) {
-        if (file.isNull()) {
-            cb(null, file); // pass along
-        } else if (file.isStream()) {
-            cb(new Error('gulp-espower: Streaming not supported'));
-        } else {
-            file.contents = new Buffer(espowerSource(file.contents.toString('utf8'), file.path, opt));
-            cb(null, file);
-        }
-    }
+    var transform = function (code, path) {
+        return new Buffer(espowerSource(code, path, opt));
+    };
 
-    return es.map(instrument);
+    return through.obj(function (file, encoding, callback) {
+        encoding = encoding || 'utf8';
+        if (file.isNull()) {
+            this.push(file);
+        } else if (file.isBuffer()) {
+            file.contents = transform(file.contents.toString(encoding), file.path);
+            this.push(file);
+        } else if (file.isStream()) {
+            file.contents = file.contents.pipe(new BufferStreams(function(err, buf, cb) {
+                if(err) {
+                    cb(new gutil.PluginError('gulp-espower', err, {showStack: true}));
+                } else {
+                    cb(null, transform(buf.toString(encoding), file.path));
+                }
+            }));
+            this.push(file);
+        }
+        callback();
+    });
 };

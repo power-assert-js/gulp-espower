@@ -1,6 +1,8 @@
 /*global describe, it*/
 "use strict";
 
+delete require.cache[require.resolve('../')];
+
 var fs = require("fs"),
     es = require("event-stream"),
     assert = require("assert"),
@@ -78,24 +80,35 @@ describe("gulp-espower", function () {
     });
 
 
-    it("should error on stream", function (done) {
+    it('should produce expected file via stream', function (done) {
         var stream = espower(),
-            srcFile = new gutil.File({
-                path: "test/fixtures/example.js",
-                cwd: "test/",
-                base: "test/fixtures",
-                contents: fs.createReadStream("test/fixtures/example.js")
+            srcStream = new gutil.File({
+                path: 'test/fixtures/example.js',
+                cwd: 'test/',
+                base: 'test/fixtures',
+                contents: fs.createReadStream('test/fixtures/example.js')
+            }),
+            expectedFile = new gutil.File({
+                path: 'test/expected/example.js',
+                cwd: 'test/',
+                base: 'test/expected',
+                contents: fs.readFileSync('test/expected/example.js')
             });
-        stream.on("error", function(err) {
+        stream.on('error', function(err) {
             assert(err);
             done();
         });
-        stream.on("data", function (newFile) {
+        stream.on('data', function (newFile) {
+            assert(newFile);
+            assert(newFile.contents);
             newFile.contents.pipe(es.wait(function(err, data) {
-                done(err);
+                assert(!err);
+                assert.equal(data, String(expectedFile.contents));
+                done();
             }));
         });
-        stream.write(srcFile);
+        stream.write(srcStream);
         stream.end();
     });
+
 });
