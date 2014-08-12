@@ -31,12 +31,12 @@
     "url": "git://github.com/twada/gulp-espower.git"
   },
   "scripts": {
-    "jshint": "./node_modules/.bin/jshint index.js",
-    "test": "./node_modules/.bin/mocha"
+    "jshint": "jshint index.js",
+    "test": "mocha"
   },
   "dependencies": {
     "bufferstreams": "~0.0.2",
-    "espower-source": "~0.7.3",
+    "espower-source": "~0.8.0",
     "gulp-util": "~3.0.0",
     "through2": "~1.0.0"
   },

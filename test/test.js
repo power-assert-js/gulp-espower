@@ -42,16 +42,11 @@ describe("gulp-espower", function () {
 
     it("custom options", function (done) {
         var stream = espower({
-            destructive: true,
-            powerAssertVariableName: 'refute',
-            targetMethods: {
-                oneArg: [
-                    'isNull'
-                ],
-                twoArgs: [
-                    'same'
-                ]
-            }
+            patterns: [
+                'refute(actual, [message])',
+                'refute.same(actual, expected, [message])',
+                'refute.isNull(object, [message])'
+            ]
         }),
             srcFile = new gutil.File({
                 path: "test/fixtures/customized.js",
