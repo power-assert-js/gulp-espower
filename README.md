@@ -59,6 +59,11 @@ If callee name (for example, `assert.equal`) matches exactly and number of argum
 Detection is done by [escallmatch](http://github.com/twada/escallmatch). Any arguments enclosed in bracket (for example, `[message]`) means optional parameters. Without bracket means mandatory parameters.
 
 
+## CHANGELOG
+
+See [CHANGELOG](https://github.com/twada/gulp-espower/blob/master/CHANGELOG.md)
+
+
 ## License
 
 Licensed under the [MIT](https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT) license.

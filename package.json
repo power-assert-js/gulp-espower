@@ -21,6 +21,7 @@
   "main": "./index.js",
   "files": [
     "LICENSE-MIT",
+    "CHANGELOG.md",
     "README.md",
     "index.js",
     "package.json",
