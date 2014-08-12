@@ -1,6 +1,6 @@
 {
   "name": "gulp-espower",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "A gulp plugin for power-assert",
   "keywords": [
     "power-assert",
