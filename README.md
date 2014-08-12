@@ -34,36 +34,29 @@ gulp.src("./test/*.js")
 
 ### espower(options)
 
-#### options.powerAssertVariableName
-Type: `String`
-Default value: `'assert'`
+#### options.patterns
 
-Target variable name to instrument.
-
-#### options.targetMethods
-Type: `Object`
-Default value: 
+| type                | default value       |
+|:--------------------|:--------------------|
+| `Array` of `string` | objects shown below |
 
 ```javascript
-targetMethods: {
-    oneArg: [
-        'ok'
-    ],
-    twoArgs: [
-        'equal',
-        'notEqual',
-        'strictEqual',
-        'notStrictEqual',
-        'deepEqual',
-        'notDeepEqual'
-    ]
-}
+[
+    'assert(value, [message])',
+    'assert.ok(value, [message])',
+    'assert.equal(actual, expected, [message])',
+    'assert.notEqual(actual, expected, [message])',
+    'assert.strictEqual(actual, expected, [message])',
+    'assert.notStrictEqual(actual, expected, [message])',
+    'assert.deepEqual(actual, expected, [message])',
+    'assert.notDeepEqual(actual, expected, [message])'
+]
 ```
 
-Target assertion methods to insrtument.
+Target patterns for power assert feature instrumentation.
 
-* `oneArg` array for assertion methods with a expression argument (like `assert.ok(actual)`)
-* `twoArgs` array for assertion methods with two expression arguments (like `assert.equal(actual, expected)`)
+If callee name (for example, `assert.equal`) matches exactly and number of arguments is satisfied, then the assertion will be modified.
+Detection is done by [escallmatch](http://github.com/twada/escallmatch). Any arguments enclosed in bracket (for example, `[message]`) means optional parameters. Without bracket means mandatory parameters.
 
 
 ## License
