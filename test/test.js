@@ -7,6 +7,7 @@ var fs = require("fs"),
     es = require("event-stream"),
     assert = require("assert"),
     gutil = require("gulp-util"),
+    convert = require('convert-source-map'),
     espower = require("../");
 
 describe("gulp-espower", function () {
@@ -93,7 +94,34 @@ describe("gulp-espower", function () {
         stream.on("data", function (newFile) {
             assert(newFile);
             assert(newFile.contents);
-            assert.equal(String(newFile.contents), String(expectedFile.contents));
+            assert.equal(newFile.contents.toString() + '\n', expectedFile.contents.toString());
+            assert(newFile.sourceMap);
+            assert.deepEqual(newFile.sourceMap, {
+                version: 3,
+                sources: [ 'customized.js' ],
+                names:
+                [ 'empower',
+                  'require',
+                  'formatter',
+                  'busterAssertions',
+                  'refute',
+                  'targetMethods',
+                  'oneArg',
+                  'twoArgs',
+                  'truthy',
+                  'falsy',
+                  '_expr',
+                  '_capt',
+                  'content',
+                  'filepath',
+                  'line',
+                  'isNull',
+                  'same' ],
+                mappings: 'AAAA,IAAIA,OAAA,GAAUC,OAAA,CAAQ,SAAR,CAAd,EACIC,SAAA,GAAYD,OAAA,CAAQ,wBAAR,CADhB,EAEIE,gBAAA,GAAmBF,OAAA,CAAQ,mBAAR,CAFvB,EAGIG,MAAA,GAASJ,OAAA,CAAQG,gBAAA,CAAiBC,MAAzB,EAAiCF,SAAA,EAAjC,EAA8C;AAAA,QAAEG,aAAA,EAAe;AAAA,YAAEC,MAAA,EAAQ,CAAC,QAAD,CAAV;AAAA,YAAsBC,OAAA,EAAS,CAAC,MAAD,CAA/B;AAAA,SAAjB;AAAA,KAA9C,CAHb,EAIIC,MAAA,GAAS,MAJb,EAKIC,KAAA,GAAQ,OALZ;AAMAL,MAAA,CAAOA,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EANA;AAOAV,MAAA,CAAOW,MAAP,CAAcX,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAd,EAPA;AAQAV,MAAA,CAAOY,IAAP,CAAYZ,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAZ,EAAoBV,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAApB',
+                file: 'customized.js',
+                sourceRoot: 'test/fixtures',
+                sourcesContent: [ 'var empower = require(\'empower\'),\n    formatter = require(\'power-assert-formatter\'),\n    busterAssertions = require("buster-assertions"),\n    refute = empower(busterAssertions.refute, formatter(), { targetMethods: { oneArg: [\'isNull\'], twoArgs: [\'same\'] } }),\n    truthy = \'true\',\n    falsy = \'false\';\nrefute(truthy);\nrefute.isNull(falsy);\nrefute.same(truthy, falsy);\n' ]
+            });
             done();
         });
         stream.write(srcFile);
