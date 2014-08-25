@@ -25,6 +25,14 @@ describe("gulp-espower", function () {
                 base: "test/expected",
                 contents: fs.readFileSync("test/expected/example.js")
             });
+        srcFile.sourceMap = {
+            version : 3,
+            file: srcFile.relative,
+            names: [],
+            mappings: '',
+            sources: [srcFile.relative],
+            sourcesContent: [srcFile.contents.toString()]
+        };
         stream.on("error", function(err) {
             assert(err);
             done(err);
@@ -32,7 +40,17 @@ describe("gulp-espower", function () {
         stream.on("data", function (newFile) {
             assert(newFile);
             assert(newFile.contents);
-            assert.equal(String(newFile.contents), String(expectedFile.contents));
+            assert.equal(newFile.contents.toString() + '\n', expectedFile.contents.toString());
+            assert(newFile.sourceMap);
+            assert.deepEqual(newFile.sourceMap, {
+                "version":3,
+                "sources":["example.js"],
+                "names":["assert","require","truthy","falsy","_expr","_capt","content","filepath","line","equal"],
+                "mappings":"AAAA,IAAIA,MAAA,GAASC,OAAA,CAAQ,cAAR,CAAb,EACIC,MAAA,GAAS,MADb,EAEIC,KAAA,GAAQ,OAFZ;AAGAH,MAAA,CAAOA,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EAHA;AAIAR,MAAA,CAAOS,KAAP,CAAaT,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAb,EAAqBR,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAArB",
+                "file":"example.js",
+                "sourceRoot":"test/fixtures",
+                "sourcesContent":["var assert = require('power-assert'),\n    truthy = 'true',\n    falsy = 'false';\nassert(falsy);\nassert.equal(truthy, falsy);\n"]
+            });
             done();
         });
         stream.write(srcFile);
@@ -60,6 +78,14 @@ describe("gulp-espower", function () {
                 base: "test/expected",
                 contents: fs.readFileSync("test/expected/customized.js")
             });
+        srcFile.sourceMap = {
+            version : 3,
+            file: srcFile.relative,
+            names: [],
+            mappings: '',
+            sources: [srcFile.relative],
+            sourcesContent: [srcFile.contents.toString()]
+        };
         stream.on("error", function(err) {
             assert(err);
             done(err);
@@ -87,7 +113,7 @@ describe("gulp-espower", function () {
                 path: 'test/expected/example.js',
                 cwd: 'test/',
                 base: 'test/expected',
-                contents: fs.readFileSync('test/expected/example.js')
+                contents: fs.readFileSync('test/expected/example-with-sourcemap.js')
             });
         stream.on('error', function(err) {
             assert(err);
