@@ -69,13 +69,26 @@ describe("gulp-espower", function () {
                     assert.equal(newFile.contents.toString() + '\n', expectedFile.contents.toString());
                     assert(newFile.sourceMap);
                     assert.deepEqual(newFile.sourceMap, {
-                        "version":3,
-                        "sources":["example.js"],
-                        "names":["assert","require","truthy","falsy","_expr","_capt","content","filepath","line","equal"],
-                        "mappings":"AAAA,IAAIA,MAAA,GAASC,OAAA,CAAQ,cAAR,CAAb,EACIC,MAAA,GAAS,MADb,EAEIC,KAAA,GAAQ,OAFZ;AAGAH,MAAA,CAAOA,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EAHA;AAIAR,MAAA,CAAOS,KAAP,CAAaT,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAb,EAAqBR,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAArB",
-                        "file":"example.js",
-                        "sourceRoot":"test/fixtures",
-                        "sourcesContent":["var assert = require('power-assert'),\n    truthy = 'true',\n    falsy = 'false';\nassert(falsy);\nassert.equal(truthy, falsy);\n"]
+                        version: 3,
+                        sources: [
+                            'example.js'
+                        ],
+                        names: [
+                            'assert',
+                            'require',
+                            'truthy',
+                            'falsy',
+                            '_expr',
+                            '_capt',
+                            'content',
+                            'filepath',
+                            'line',
+                            'equal'
+                        ],
+                        mappings: 'AAAA,IAAIA,MAAA,GAASC,OAAA,CAAQ,cAAR,CAAb,EACIC,MAAA,GAAS,MADb,EAEIC,KAAA,GAAQ,OAFZ;AAGAH,MAAA,CAAOA,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EAHA;AAIAR,MAAA,CAAOS,KAAP,CAAaT,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAb,EAAqBR,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAArB',
+                        file: 'example.js',
+                        sourceRoot: 'test/fixtures',
+                        sourcesContent: [ 'var assert = require(\'power-assert\'),\n    truthy = \'true\',\n    falsy = \'false\';\nassert(falsy);\nassert.equal(truthy, falsy);\n' ] 
                     });
                     done();
                 });
@@ -150,7 +163,9 @@ describe("gulp-espower", function () {
                     assert(newFile.sourceMap);
                     assert.deepEqual(newFile.sourceMap, {
                         version: 3,
-                        sources: [ 'customized.js' ],
+                        sources: [
+                            'customized.js'
+                        ],
                         names: [
                             'empower',
                             'require',

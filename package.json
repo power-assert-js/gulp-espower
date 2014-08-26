@@ -43,7 +43,7 @@
     "espower-source": "~0.8.0",
     "esprima": "~1.2.2",
     "gulp-util": "~3.0.0",
-    "multi-stage-sourcemap": "~0.1.1",
+    "multi-stage-sourcemap": "~0.2.1",
     "through2": "~1.0.0",
     "vinyl-sourcemaps-apply": "~0.1.1",
     "xtend": "~4.0.0"
