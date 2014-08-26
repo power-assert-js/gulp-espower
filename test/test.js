@@ -87,7 +87,6 @@ describe("gulp-espower", function () {
                         ],
                         mappings: 'AAAA,IAAIA,MAAA,GAASC,OAAA,CAAQ,cAAR,CAAb,EACIC,MAAA,GAAS,MADb,EAEIC,KAAA,GAAQ,OAFZ;AAGAH,MAAA,CAAOA,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EAHA;AAIAR,MAAA,CAAOS,KAAP,CAAaT,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAb,EAAqBR,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAArB',
                         file: 'example.js',
-                        sourceRoot: 'test/fixtures',
                         sourcesContent: [ 'var assert = require(\'power-assert\'),\n    truthy = \'true\',\n    falsy = \'false\';\nassert(falsy);\nassert.equal(truthy, falsy);\n' ] 
                     });
                     done();
@@ -187,7 +186,6 @@ describe("gulp-espower", function () {
                         ],
                         mappings: 'AAAA,IAAIA,OAAA,GAAUC,OAAA,CAAQ,SAAR,CAAd,EACIC,SAAA,GAAYD,OAAA,CAAQ,wBAAR,CADhB,EAEIE,gBAAA,GAAmBF,OAAA,CAAQ,mBAAR,CAFvB,EAGIG,MAAA,GAASJ,OAAA,CAAQG,gBAAA,CAAiBC,MAAzB,EAAiCF,SAAA,EAAjC,EAA8C;AAAA,QAAEG,aAAA,EAAe;AAAA,YAAEC,MAAA,EAAQ,CAAC,QAAD,CAAV;AAAA,YAAsBC,OAAA,EAAS,CAAC,MAAD,CAA/B;AAAA,SAAjB;AAAA,KAA9C,CAHb,EAIIC,MAAA,GAAS,MAJb,EAKIC,KAAA,GAAQ,OALZ;AAMAL,MAAA,CAAOA,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EANA;AAOAV,MAAA,CAAOW,MAAP,CAAcX,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAd,EAPA;AAQAV,MAAA,CAAOY,IAAP,CAAYZ,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAZ,EAAoBV,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAApB',
                         file: 'customized.js',
-                        sourceRoot: 'test/fixtures',
                         sourcesContent: [ 'var empower = require(\'empower\'),\n    formatter = require(\'power-assert-formatter\'),\n    busterAssertions = require("buster-assertions"),\n    refute = empower(busterAssertions.refute, formatter(), { targetMethods: { oneArg: [\'isNull\'], twoArgs: [\'same\'] } }),\n    truthy = \'true\',\n    falsy = \'false\';\nrefute(truthy);\nrefute.isNull(falsy);\nrefute.same(truthy, falsy);\n' ]
                     });
                     done();

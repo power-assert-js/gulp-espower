@@ -35,7 +35,10 @@ function transform (file, encoding, opt) {
     var inMap = file.sourceMap;
     var escodegenOptions = {};
     var jsCode = file.contents.toString(encoding);
-    var jsAst = esprima.parse(jsCode, {tolerant: true, loc: true, source: file.path});
+
+    // use file.relative to keep paths relative until the end of chain
+    var jsAst = esprima.parse(jsCode, {tolerant: true, loc: true, source: file.relative});
+
     var espowerOptions = extend(espower.defaultOptions(), opt, {
         destructive: true,
         path: file.path
@@ -45,7 +48,8 @@ function transform (file, encoding, opt) {
         escodegenOptions = extend(escodegenOptions, {
             file: file.relative,
             sourceMap: true,
-            sourceMapRoot: file.base,
+            // do not set sourceMapRoot to keep paths relative until the end of chain
+            // sourceMapRoot: file.base,
             sourceMapWithCode: true
         });
     }
@@ -66,7 +70,8 @@ function transform (file, encoding, opt) {
         }
         reMap.setProperty('sources', inMap.sources);
         reMap.setProperty('sourcesContent', inMap.sourcesContent);
-        reMap.setProperty('sourceRoot', file.base);
+        // do not set sourceMapRoot to keep paths relative until the end of chain
+        // reMap.setProperty('sourceRoot', file.base);
 
         file.sourceMap = reMap.toObject();
     } else {
