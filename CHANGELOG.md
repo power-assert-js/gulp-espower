@@ -1,3 +1,13 @@
+## 0.9.0 (2014-09-02)
+
+
+#### Features
+
+* **gulp-espower:**
+  * gulp-sourcemaps support ([caf2a275](https://github.com/twada/gulp-espower/commit/caf2a275aa26a1ce2ff43b024d73a8dc055feb3d))
+  * keep paths relative until the end of chain ([9dc8f50b](https://github.com/twada/gulp-espower/commit/9dc8f50b0ecf3a0d77c472bf75e7730a54748c9f))
+
+
 ## 0.8.0 (2014-08-12)
 
 
