@@ -1,3 +1,11 @@
+### 0.9.1 (2014-09-17)
+
+
+#### Features
+
+* **gulp-espower:** update espower and espower-source to 0.9.1 ([681f1ab9](https://github.com/twada/gulp-espower/commit/681f1ab9b786066fd66236686f0f118470851ef5))
+
+
 ## 0.9.0 (2014-09-02)
 
 
