@@ -41,6 +41,10 @@
   "homepage": "https://github.com/twada/gulp-espower",
   "keywords": [
     "power-assert",
+    "assert",
+    "assertion",
+    "test",
+    "testing",
     "gulpplugin"
   ],
   "license": {
