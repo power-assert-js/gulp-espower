@@ -23,11 +23,11 @@ npm install --save-dev gulp-espower
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var espower = require("gulp-espower");
+var espower = require('gulp-espower');
 
-gulp.src("./test/*.js")
+gulp.src('./test/*.js')
     .pipe(espower())
-    .pipe(gulp.dest("./dist"));
+    .pipe(gulp.dest('./dist'));
 ```
 
 
@@ -36,19 +36,19 @@ gulp.src("./test/*.js")
 gulp-espower can be used with [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) to generate source maps for the instrumented javascript code. Note that you should `init` gulp-sourcemaps prior to running the gulp-espower and `write` the source maps after. gulp-espower works well with some gulp plugins that supports [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps).
 
 ```javascript
-var espower = require("gulp-espower");
-var coffee = require("gulp-coffee");
-var concat = require("gulp-concat");
-var sourcemaps = require("gulp-sourcemaps");
+var espower = require('gulp-espower');
+var coffee = require('gulp-coffee');
+var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
 
 // compile, instrument then concatinate
-gulp.src("./test/*test.coffee")
+gulp.src('./test/*test.coffee')
     .pipe(sourcemaps.init())
     .pipe(coffee())
     .pipe(espower())
     .pipe(concat('all_test.js'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./build"));
+    .pipe(gulp.dest('./build'));
 // will write the source maps inline in the code
 ```
 
