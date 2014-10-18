@@ -11,7 +11,7 @@
   "dependencies": {
     "bufferstreams": "~0.0.2",
     "convert-source-map": "~0.4.1",
-    "escodegen": "~1.4.0",
+    "escodegen": "~1.4.1",
     "espower": "~0.9.1",
     "espower-source": "~0.9.1",
     "esprima": "~1.2.2",
@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "event-stream": "~3.1.7",
-    "jshint": "~2.5.5",
-    "mocha": "~1.21.4"
+    "jshint": "~2.5.6",
+    "mocha": "~1.21.5"
   },
   "engines": {
     "node": ">=0.8.0",
