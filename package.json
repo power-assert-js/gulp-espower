@@ -18,13 +18,13 @@
     "gulp-util": "~3.0.1",
     "multi-stage-sourcemap": "~0.2.1",
     "through2": "~1.1.1",
-    "vinyl-sourcemaps-apply": "~0.1.1",
+    "vinyl-sourcemaps-apply": "~0.1.4",
     "xtend": "~4.0.0"
   },
   "devDependencies": {
     "event-stream": "~3.1.7",
-    "jshint": "~2.5.6",
-    "mocha": "~1.21.5"
+    "jshint": "~2.5.8",
+    "mocha": "~2.0.1"
   },
   "engines": {
     "node": ">=0.8.0",
