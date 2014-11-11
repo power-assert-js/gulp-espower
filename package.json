@@ -57,7 +57,7 @@
     "url": "git://github.com/twada/gulp-espower.git"
   },
   "scripts": {
-    "jshint": "jshint index.js",
+    "lint": "jshint index.js",
     "test": "jshint index.js && mocha"
   }
 }
