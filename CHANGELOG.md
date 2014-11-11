@@ -1,3 +1,11 @@
+## [0.10.0](https://github.com/twada/gulp-espower/releases/tag/v0.10.0) (2014-11-11)
+
+
+* **gulp-espower:**
+  * update espower and espower-source to 0.10.0 ([724aead0](https://github.com/twada/gulp-espower/commit/724aead0ac2ec8be7572eb133956729813d56518))
+  * update vinyl-sourcemaps-apply ([c19ca9ab](https://github.com/twada/gulp-espower/commit/c19ca9abe9da0eec3c8134e63ccd72ec240092e5))
+
+
 ### 0.9.1 (2014-09-17)
 
 
