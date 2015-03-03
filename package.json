@@ -8,6 +8,13 @@
     "url": "https://github.com/twada"
   },
   "bugs": "https://github.com/twada/gulp-espower/issues",
+  "contributors": [
+    {
+      "name": "bouzuya",
+      "mail": "m@bouzuya.net",
+      "url": "http://bouzuya.net"
+    }
+  ],
   "dependencies": {
     "bufferstreams": "~0.0.2",
     "convert-source-map": "~0.4.1",
@@ -40,12 +47,12 @@
   ],
   "homepage": "https://github.com/twada/gulp-espower",
   "keywords": [
-    "power-assert",
     "assert",
     "assertion",
+    "gulpplugin",
+    "power-assert",
     "test",
-    "testing",
-    "gulpplugin"
+    "testing"
   ],
   "license": {
     "type": "MIT",

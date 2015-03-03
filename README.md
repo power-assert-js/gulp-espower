@@ -89,6 +89,16 @@ Detection is done by [escallmatch](http://github.com/twada/escallmatch). Any arg
 See [CHANGELOG](https://github.com/twada/gulp-espower/blob/master/CHANGELOG.md)
 
 
+## AUTHOR
+
+* [Takuto Wada](http://github.com/twada)
+
+
+## CONTRIBUTORS
+
+* [bouzuya](http://bouzuya.net)
+
+
 ## License
 
 Licensed under the [MIT](https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT) license.
