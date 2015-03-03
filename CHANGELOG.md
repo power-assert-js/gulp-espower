@@ -1,3 +1,12 @@
+### [0.10.1](https://github.com/twada/gulp-espower/releases/tag/v0.10.1) (2015-03-04)
+
+
+#### Bug Fixes
+
+* **gulp-espower:**
+  * fix a bug that throw an error when the file has a syntax error ([603a681b](https://github.com/twada/gulp-espower/commit/603a681b9be2b809970c9aa89052d954feb2134b)) (by @bouzuya)
+
+
 ## [0.10.0](https://github.com/twada/gulp-espower/releases/tag/v0.10.0) (2014-11-11)
 
 
