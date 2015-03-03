@@ -85,8 +85,12 @@ module.exports = function (opt) {
         if (file.isNull()) {
             this.push(file);
         } else if (file.isBuffer()) {
-            transform(file, encoding, opt);
-            this.push(file);
+            try {
+              transform(file, encoding, opt);
+              this.push(file);
+            } catch (err) {
+              return callback(new gutil.PluginError('gulp-espoewr', err, {showStack: true}));
+            }
         } else if (file.isStream()) {
             file.contents = file.contents.pipe(new BufferStreams(function(err, buf, cb) {
                 if(err) {
