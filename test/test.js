@@ -228,4 +228,21 @@ describe("gulp-espower", function () {
         stream.end();
     });
 
+    it('should emit the error when the file has a syntax error', function (done) {
+        var stream = espower(),
+            srcFile = new gutil.File({
+                path: "test/fixtures/syntax-error.js",
+                cwd: "test/",
+                base: "test/fixtures",
+                contents: fs.readFileSync("test/fixtures/syntax-error.js")
+            });
+        assert.doesNotThrow(function() {
+          stream.on("error", function(err) {
+            assert(err);
+            done();
+          });
+          stream.write(srcFile);
+          stream.end();
+        });
+    });
 });
