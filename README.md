@@ -1,6 +1,6 @@
 # gulp-espower [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
-> A [gulp](https://github.com/wearefractal/gulp) plugin for [power-assert](http://github.com/twada/power-assert).
+> A [gulp](https://github.com/wearefractal/gulp) plugin for [power-assert](http://github.com/power-assert-js/power-assert).
 
 ## Description
 `gulp-espower` is a gulp plugin to instrument "Power Assert" feature into your code.
@@ -9,7 +9,7 @@
 Internally, `gulp-espower` task uses `espower` module that manipulates assertion expression (JavaScript Code) represented as [Mozilla JavaScript AST](https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API), to instrument power-assert feature into the code. The magic is done by using [Esprima](http://esprima.org/) and [Escodegen](https://github.com/Constellation/escodegen).
 
 
-Please note that `gulp-espower` is a beta version product. Pull-requests, issue reports and patches are always welcomed. See [power-assert](http://github.com/twada/power-assert) project for more documentation.
+Please note that `gulp-espower` is a beta version product. Pull-requests, issue reports and patches are always welcomed. See [power-assert](http://github.com/power-assert-js/power-assert) project for more documentation.
 
 
 ## Usage
@@ -86,7 +86,7 @@ Detection is done by [escallmatch](http://github.com/twada/escallmatch). Any arg
 
 ## CHANGELOG
 
-See [CHANGELOG](https://github.com/twada/gulp-espower/blob/master/CHANGELOG.md)
+See [CHANGELOG](https://github.com/power-assert-js/gulp-espower/blob/master/CHANGELOG.md)
 
 
 ## AUTHOR
@@ -101,13 +101,13 @@ See [CHANGELOG](https://github.com/twada/gulp-espower/blob/master/CHANGELOG.md)
 
 ## License
 
-Licensed under the [MIT](https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT) license.
+Licensed under the [MIT](https://github.com/power-assert-js/gulp-espower/blob/master/LICENSE-MIT) license.
 
 [npm-url]: https://npmjs.org/package/gulp-espower
 [npm-image]: https://badge.fury.io/js/gulp-espower.svg
 
-[travis-url]: http://travis-ci.org/twada/gulp-espower
-[travis-image]: https://secure.travis-ci.org/twada/gulp-espower.svg?branch=master
+[travis-url]: http://travis-ci.org/power-assert-js/gulp-espower
+[travis-image]: https://secure.travis-ci.org/power-assert-js/gulp-espower.svg?branch=master
 
-[depstat-url]: https://gemnasium.com/twada/gulp-espower
-[depstat-image]: https://gemnasium.com/twada/gulp-espower.svg
+[depstat-url]: https://gemnasium.com/power-assert-js/gulp-espower
+[depstat-image]: https://gemnasium.com/power-assert-js/gulp-espower.svg

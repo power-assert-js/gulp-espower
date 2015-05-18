@@ -7,7 +7,7 @@
     "email": "takuto.wada@gmail.com",
     "url": "https://github.com/twada"
   },
-  "bugs": "https://github.com/twada/gulp-espower/issues",
+  "bugs": "https://github.com/power-assert-js/gulp-espower/issues",
   "contributors": [
     {
       "name": "bouzuya",
@@ -45,7 +45,7 @@
     "package.json",
     "test"
   ],
-  "homepage": "https://github.com/twada/gulp-espower",
+  "homepage": "https://github.com/power-assert-js/gulp-espower",
   "keywords": [
     "assert",
     "assertion",
@@ -56,12 +56,12 @@
   ],
   "license": {
     "type": "MIT",
-    "url": "https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT"
+    "url": "https://github.com/power-assert-js/gulp-espower/blob/master/LICENSE-MIT"
   },
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/twada/gulp-espower.git"
+    "url": "git://github.com/power-assert-js/gulp-espower.git"
   },
   "scripts": {
     "lint": "jshint index.js",

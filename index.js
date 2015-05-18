@@ -1,11 +1,11 @@
 /**
  * gulp-espower - A gulp plugin to apply espower to target files.
  * 
- * https://github.com/twada/gulp-espower
+ * https://github.com/power-assert-js/gulp-espower
  *
  * Copyright (c) 2013-2015 Takuto Wada
  * Licensed under the MIT license.
- *   https://github.com/twada/gulp-espower/blob/master/LICENSE-MIT
+ *   https://github.com/power-assert-js/gulp-espower/blob/master/LICENSE-MIT
  */
 'use strict';
 
