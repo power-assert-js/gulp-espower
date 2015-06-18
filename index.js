@@ -36,18 +36,20 @@ function transform (file, encoding, opt) {
     var escodegenOptions = {};
     var jsCode = file.contents.toString(encoding);
 
-    // use file.relative to keep paths relative until the end of chain
-    var jsAst = esprima.parse(jsCode, {tolerant: true, loc: true, source: file.relative});
+    var jsAst = esprima.parse(jsCode, {tolerant: true, loc: true});
 
-    var espowerOptions = extend(espower.defaultOptions(), opt, {
+    var espowerOptions = extend(espower.defaultOptions(), {
         destructive: true,
+        sourceRoot: file.cwd,
         path: file.path
-    });
+    }, opt);
     if (inMap) {
         espowerOptions.sourceMap = inMap;
+        // https://github.com/floridoo/gulp-sourcemaps#plugin-developers-only-how-to-add-source-map-support-to-plugins
         escodegenOptions = extend(escodegenOptions, {
+            // use file.relative for `file` and `sources` to keep paths relative until the end of chain
             file: file.relative,
-            sourceMap: true,
+            sourceMap: file.relative,
             // do not set sourceMapRoot to keep paths relative until the end of chain
             // sourceMapRoot: file.base,
             sourceMapWithCode: true
