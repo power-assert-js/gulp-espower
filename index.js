@@ -103,7 +103,13 @@ module.exports = function (opt) {
                 if(err) {
                     cb(new gutil.PluginError('gulp-espower', err, {showStack: true}));
                 } else {
-                    cb(null, new Buffer(espowerSource(buf.toString(encoding), file.path, mergeEspowerOptions(opt, file))));
+                    var modifiedCode;
+                    try {
+                        modifiedCode = espowerSource(buf.toString(encoding), file.path, mergeEspowerOptions(opt, file));
+                    } catch (err) {
+                        return callback(new gutil.PluginError('gulp-espoewr', err, {showStack: true}));
+                    }
+                    cb(null, new Buffer(modifiedCode));
                 }
             }));
             this.push(file);

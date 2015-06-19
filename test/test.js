@@ -229,21 +229,40 @@ describe("gulp-espower", function () {
     });
 
 
-    it('should emit the error when the file has a syntax error', function (done) {
-        var stream = espower(),
-            srcFile = new gutil.File({
-                path: process.cwd() + "/test/fixtures/syntax-error.js",
-                cwd: process.cwd(),
-                base: process.cwd() + "/test/fixtures",
-                contents: fs.readFileSync("test/fixtures/syntax-error.js")
+    describe('should emit error when the file has a syntax error', function () {
+        it('when file is Buffer', function (done) {
+            var stream = espower(),
+                srcFile = new gutil.File({
+                    path: process.cwd() + "/test/fixtures/syntax-error.js",
+                    cwd: process.cwd(),
+                    base: process.cwd() + "/test/fixtures",
+                    contents: fs.readFileSync("test/fixtures/syntax-error.js")
+                });
+            assert.doesNotThrow(function() {
+                stream.on("error", function(err) {
+                    assert(err);
+                    done();
+                });
+                stream.write(srcFile);
+                stream.end();
             });
-        assert.doesNotThrow(function() {
-          stream.on("error", function(err) {
-            assert(err);
-            done();
-          });
-          stream.write(srcFile);
-          stream.end();
+        });
+        it('when file is Stream', function (done) {
+            var stream = espower(),
+                srcStream = new gutil.File({
+                    path: process.cwd() + "/test/fixtures/syntax-error.js",
+                    cwd: process.cwd(),
+                    base: process.cwd() + "/test/fixtures",
+                    contents: fs.createReadStream("test/fixtures/syntax-error.js")
+                });
+            assert.doesNotThrow(function() {
+                stream.on("error", function(err) {
+                    assert(err);
+                    done();
+                });
+                stream.write(srcStream);
+                stream.end();
+            });
         });
     });
 });
