@@ -31,6 +31,15 @@ function mergeSourceMap(incomingSourceMap, outgoingSourceMap) {
     return JSON.parse(transfer({fromSourceMap: outgoingSourceMap, toSourceMap: incomingSourceMap}));
 }
 
+function mergeEspowerOptions (options, file) {
+    return extend(espower.defaultOptions(), {
+        sourceRoot: file.cwd,
+        path: file.path
+    }, options, {
+        destructive: true
+    });
+}
+
 function transform (file, encoding, opt) {
     var inMap = file.sourceMap;
     var escodegenOptions = {};
@@ -38,11 +47,7 @@ function transform (file, encoding, opt) {
 
     var jsAst = esprima.parse(jsCode, {tolerant: true, loc: true});
 
-    var espowerOptions = extend(espower.defaultOptions(), {
-        destructive: true,
-        sourceRoot: file.cwd,
-        path: file.path
-    }, opt);
+    var espowerOptions = mergeEspowerOptions(opt, file);
     if (inMap) {
         espowerOptions.sourceMap = inMap;
         // https://github.com/floridoo/gulp-sourcemaps#plugin-developers-only-how-to-add-source-map-support-to-plugins
@@ -98,7 +103,7 @@ module.exports = function (opt) {
                 if(err) {
                     cb(new gutil.PluginError('gulp-espower', err, {showStack: true}));
                 } else {
-                    cb(null, new Buffer(espowerSource(buf.toString(encoding), file.path, opt)));
+                    cb(null, new Buffer(espowerSource(buf.toString(encoding), file.path, mergeEspowerOptions(opt, file))));
                 }
             }));
             this.push(file);
