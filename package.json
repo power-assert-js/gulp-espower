@@ -54,10 +54,7 @@
     "test",
     "testing"
   ],
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/power-assert-js/gulp-espower/blob/master/LICENSE-MIT"
-  },
+  "license": "MIT",
   "main": "./index.js",
   "repository": {
     "type": "git",
