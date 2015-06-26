@@ -3,12 +3,12 @@
 
 delete require.cache[require.resolve('../')];
 
-var fs = require("fs"),
-    es = require("event-stream"),
-    assert = require("assert"),
-    gutil = require("gulp-util"),
-    convert = require('convert-source-map'),
-    espower = require("../");
+var fs = require("fs");
+var es = require("event-stream");
+var assert = require("assert");
+var gutil = require("gulp-util");
+var convert = require('convert-source-map');
+var espower = require("../");
 
 describe("gulp-espower", function () {
 
@@ -198,19 +198,19 @@ describe("gulp-espower", function () {
 
 
     it('should produce expected file via stream', function (done) {
-        var stream = espower(),
-            srcStream = new gutil.File({
-                path: process.cwd() + '/test/fixtures/example.js',
-                cwd: process.cwd(),
-                base: process.cwd() + '/test/fixtures',
-                contents: fs.createReadStream('test/fixtures/example.js')
-            }),
-            expectedFile = new gutil.File({
-                path: process.cwd() + '/test/expected/example.js',
-                cwd: process.cwd(),
-                base: process.cwd() + '/test/expected',
-                contents: fs.readFileSync('test/expected/example-with-sourcemap.js')
-            });
+        var stream = espower();
+        var srcStream = new gutil.File({
+            path: process.cwd() + '/test/fixtures/example.js',
+            cwd: process.cwd(),
+            base: process.cwd() + '/test/fixtures',
+            contents: fs.createReadStream('test/fixtures/example.js')
+        });
+        var expectedFile = new gutil.File({
+            path: process.cwd() + '/test/expected/example.js',
+            cwd: process.cwd(),
+            base: process.cwd() + '/test/expected',
+            contents: fs.readFileSync('test/expected/example-with-sourcemap.js')
+        });
         stream.on('error', function(err) {
             assert(err);
             done();
@@ -231,13 +231,13 @@ describe("gulp-espower", function () {
 
     describe('should emit error when the file has a syntax error', function () {
         it('when file is Buffer', function (done) {
-            var stream = espower(),
-                srcFile = new gutil.File({
-                    path: process.cwd() + "/test/fixtures/syntax-error.js",
-                    cwd: process.cwd(),
-                    base: process.cwd() + "/test/fixtures",
-                    contents: fs.readFileSync("test/fixtures/syntax-error.js")
-                });
+            var stream = espower();
+            var srcFile = new gutil.File({
+                path: process.cwd() + "/test/fixtures/syntax-error.js",
+                cwd: process.cwd(),
+                base: process.cwd() + "/test/fixtures",
+                contents: fs.readFileSync("test/fixtures/syntax-error.js")
+            });
             assert.doesNotThrow(function() {
                 stream.on("error", function(err) {
                     assert(err);
@@ -248,13 +248,13 @@ describe("gulp-espower", function () {
             });
         });
         it('when file is Stream', function (done) {
-            var stream = espower(),
-                srcStream = new gutil.File({
-                    path: process.cwd() + "/test/fixtures/syntax-error.js",
-                    cwd: process.cwd(),
-                    base: process.cwd() + "/test/fixtures",
-                    contents: fs.createReadStream("test/fixtures/syntax-error.js")
-                });
+            var stream = espower();
+            var srcStream = new gutil.File({
+                path: process.cwd() + "/test/fixtures/syntax-error.js",
+                cwd: process.cwd(),
+                base: process.cwd() + "/test/fixtures",
+                contents: fs.createReadStream("test/fixtures/syntax-error.js")
+            });
             assert.doesNotThrow(function() {
                 stream.on("error", function(err) {
                     assert(err);

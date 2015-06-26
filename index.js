@@ -9,17 +9,17 @@
  */
 'use strict';
 
-var through = require('through2'),
-    gutil = require('gulp-util'),
-    extend = require('xtend'),
-    BufferStreams = require('bufferstreams'),
-    espower = require('espower'),
-    espowerSource = require('espower-source'),
-    esprima = require('esprima'),
-    escodegen = require('escodegen'),
-    applySourceMap = require('vinyl-sourcemaps-apply'),
-    transfer = require('multi-stage-sourcemap').transfer,
-    convert = require('convert-source-map');
+var through = require('through2');
+var gutil = require('gulp-util');
+var extend = require('xtend');
+var BufferStreams = require('bufferstreams');
+var espower = require('espower');
+var espowerSource = require('espower-source');
+var esprima = require('esprima');
+var escodegen = require('escodegen');
+var applySourceMap = require('vinyl-sourcemaps-apply');
+var transfer = require('multi-stage-sourcemap').transfer;
+var convert = require('convert-source-map');
 
 function mergeSourceMap(incomingSourceMap, outgoingSourceMap) {
     if (typeof outgoingSourceMap === 'string' || outgoingSourceMap instanceof String) {
