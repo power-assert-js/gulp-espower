@@ -1,4 +1,8 @@
-# gulp-espower [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+# gulp-espower
+
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][depstat-image]][depstat-url]
 
 > A [gulp](https://github.com/wearefractal/gulp) plugin for [power-assert](http://github.com/power-assert-js/power-assert).
 
