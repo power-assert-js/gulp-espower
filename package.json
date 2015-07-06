@@ -21,7 +21,7 @@
     "escodegen": "^1.6.1",
     "espower": "^1.0.6",
     "espower-source": "git://github.com/power-assert-js/espower-source.git#source-root",
-    "esprima": "^2.3.0",
+    "esprima": "^2.0.0",
     "gulp-util": "^3.0.5",
     "multi-stage-sourcemap": "^0.2.1",
     "through2": "^2.0.0",
