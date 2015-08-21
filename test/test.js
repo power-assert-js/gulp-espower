@@ -3,12 +3,12 @@
 
 delete require.cache[require.resolve('../')];
 
-var fs = require("fs"),
-    es = require("event-stream"),
-    assert = require("assert"),
-    gutil = require("gulp-util"),
-    convert = require('convert-source-map'),
-    espower = require("../");
+var fs = require("fs");
+var es = require("event-stream");
+var assert = require("assert");
+var gutil = require("gulp-util");
+var convert = require('convert-source-map');
+var espower = require("../");
 
 describe("gulp-espower", function () {
 
@@ -17,15 +17,15 @@ describe("gulp-espower", function () {
         beforeEach(function () {
             stream = espower();
             srcFile = new gutil.File({
-                path: "test/fixtures/example.js",
-                cwd: "test/",
-                base: "test/fixtures",
+                path: process.cwd() + "/test/fixtures/example.js",
+                cwd: process.cwd(),
+                base: process.cwd() + "/test/fixtures",
                 contents: fs.readFileSync("test/fixtures/example.js")
             });
             expectedFile = new gutil.File({
-                path: "test/expected/example.js",
-                cwd: "test/",
-                base: "test/expected",
+                path: process.cwd() + "/test/expected/example.js",
+                cwd: process.cwd(),
+                base: process.cwd() + "/test/expected",
                 contents: fs.readFileSync("test/expected/example.js")
             });
         });
@@ -110,15 +110,15 @@ describe("gulp-espower", function () {
                 ]
             });
             srcFile = new gutil.File({
-                path: "test/fixtures/customized.js",
-                cwd: "test/",
-                base: "test/fixtures",
+                path: process.cwd() + "/test/fixtures/customized.js",
+                cwd: process.cwd(),
+                base: process.cwd() + "/test/fixtures",
                 contents: fs.readFileSync("test/fixtures/customized.js")
             });
             expectedFile = new gutil.File({
-                path: "test/expected/example.js",
-                cwd: "test/",
-                base: "test/expected",
+                path: process.cwd() + "/test/expected/example.js",
+                cwd: process.cwd(),
+                base: process.cwd() + "/test/expected",
                 contents: fs.readFileSync("test/expected/customized.js")
             });
         });
@@ -198,19 +198,19 @@ describe("gulp-espower", function () {
 
 
     it('should produce expected file via stream', function (done) {
-        var stream = espower(),
-            srcStream = new gutil.File({
-                path: 'test/fixtures/example.js',
-                cwd: 'test/',
-                base: 'test/fixtures',
-                contents: fs.createReadStream('test/fixtures/example.js')
-            }),
-            expectedFile = new gutil.File({
-                path: 'test/expected/example.js',
-                cwd: 'test/',
-                base: 'test/expected',
-                contents: fs.readFileSync('test/expected/example-with-sourcemap.js')
-            });
+        var stream = espower();
+        var srcStream = new gutil.File({
+            path: process.cwd() + '/test/fixtures/example.js',
+            cwd: process.cwd(),
+            base: process.cwd() + '/test/fixtures',
+            contents: fs.createReadStream('test/fixtures/example.js')
+        });
+        var expectedFile = new gutil.File({
+            path: process.cwd() + '/test/expected/example.js',
+            cwd: process.cwd(),
+            base: process.cwd() + '/test/expected',
+            contents: fs.readFileSync('test/expected/example-with-sourcemap.js')
+        });
         stream.on('error', function(err) {
             assert(err);
             done();
@@ -220,7 +220,7 @@ describe("gulp-espower", function () {
             assert(newFile.contents);
             newFile.contents.pipe(es.wait(function(err, data) {
                 assert(!err);
-                assert.equal(data, String(expectedFile.contents));
+                assert.equal(data.toString('utf-8'), String(expectedFile.contents));
                 done();
             }));
         });
@@ -228,21 +228,41 @@ describe("gulp-espower", function () {
         stream.end();
     });
 
-    it('should emit the error when the file has a syntax error', function (done) {
-        var stream = espower(),
-            srcFile = new gutil.File({
-                path: "test/fixtures/syntax-error.js",
-                cwd: "test/",
-                base: "test/fixtures",
+
+    describe('should emit error when the file has a syntax error', function () {
+        it('when file is Buffer', function (done) {
+            var stream = espower();
+            var srcFile = new gutil.File({
+                path: process.cwd() + "/test/fixtures/syntax-error.js",
+                cwd: process.cwd(),
+                base: process.cwd() + "/test/fixtures",
                 contents: fs.readFileSync("test/fixtures/syntax-error.js")
             });
-        assert.doesNotThrow(function() {
-          stream.on("error", function(err) {
-            assert(err);
-            done();
-          });
-          stream.write(srcFile);
-          stream.end();
+            assert.doesNotThrow(function() {
+                stream.on("error", function(err) {
+                    assert(err);
+                    done();
+                });
+                stream.write(srcFile);
+                stream.end();
+            });
+        });
+        it('when file is Stream', function (done) {
+            var stream = espower();
+            var srcStream = new gutil.File({
+                path: process.cwd() + "/test/fixtures/syntax-error.js",
+                cwd: process.cwd(),
+                base: process.cwd() + "/test/fixtures",
+                contents: fs.createReadStream("test/fixtures/syntax-error.js")
+            });
+            assert.doesNotThrow(function() {
+                stream.on("error", function(err) {
+                    assert(err);
+                    done();
+                });
+                stream.write(srcStream);
+                stream.end();
+            });
         });
     });
 });

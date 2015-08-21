@@ -9,17 +9,17 @@
  */
 'use strict';
 
-var through = require('through2'),
-    gutil = require('gulp-util'),
-    extend = require('xtend'),
-    BufferStreams = require('bufferstreams'),
-    espower = require('espower'),
-    espowerSource = require('espower-source'),
-    esprima = require('esprima'),
-    escodegen = require('escodegen'),
-    applySourceMap = require('vinyl-sourcemaps-apply'),
-    transfer = require('multi-stage-sourcemap').transfer,
-    convert = require('convert-source-map');
+var through = require('through2');
+var gutil = require('gulp-util');
+var extend = require('xtend');
+var BufferStreams = require('bufferstreams');
+var espower = require('espower');
+var espowerSource = require('espower-source');
+var esprima = require('esprima');
+var escodegen = require('escodegen');
+var applySourceMap = require('vinyl-sourcemaps-apply');
+var transfer = require('multi-stage-sourcemap').transfer;
+var convert = require('convert-source-map');
 
 function mergeSourceMap(incomingSourceMap, outgoingSourceMap) {
     if (typeof outgoingSourceMap === 'string' || outgoingSourceMap instanceof String) {
@@ -31,23 +31,30 @@ function mergeSourceMap(incomingSourceMap, outgoingSourceMap) {
     return JSON.parse(transfer({fromSourceMap: outgoingSourceMap, toSourceMap: incomingSourceMap}));
 }
 
+function mergeEspowerOptions (options, file) {
+    return extend(espower.defaultOptions(), {
+        sourceRoot: file.cwd,
+        path: file.path
+    }, options, {
+        destructive: true
+    });
+}
+
 function transform (file, encoding, opt) {
     var inMap = file.sourceMap;
     var escodegenOptions = {};
     var jsCode = file.contents.toString(encoding);
 
-    // use file.relative to keep paths relative until the end of chain
-    var jsAst = esprima.parse(jsCode, {tolerant: true, loc: true, source: file.relative});
+    var jsAst = esprima.parse(jsCode, {tolerant: true, loc: true});
 
-    var espowerOptions = extend(espower.defaultOptions(), opt, {
-        destructive: true,
-        path: file.path
-    });
+    var espowerOptions = mergeEspowerOptions(opt, file);
     if (inMap) {
         espowerOptions.sourceMap = inMap;
+        // https://github.com/floridoo/gulp-sourcemaps#plugin-developers-only-how-to-add-source-map-support-to-plugins
         escodegenOptions = extend(escodegenOptions, {
+            // use file.relative for `file` and `sources` to keep paths relative until the end of chain
             file: file.relative,
-            sourceMap: true,
+            sourceMap: file.relative,
             // do not set sourceMapRoot to keep paths relative until the end of chain
             // sourceMapRoot: file.base,
             sourceMapWithCode: true
@@ -96,7 +103,13 @@ module.exports = function (opt) {
                 if(err) {
                     cb(new gutil.PluginError('gulp-espower', err, {showStack: true}));
                 } else {
-                    cb(null, new Buffer(espowerSource(buf.toString(encoding), file.path, opt)));
+                    var modifiedCode;
+                    try {
+                        modifiedCode = espowerSource(buf.toString(encoding), file.path, mergeEspowerOptions(opt, file));
+                    } catch (err) {
+                        return callback(new gutil.PluginError('gulp-espoewr', err, {showStack: true}));
+                    }
+                    cb(null, new Buffer(modifiedCode));
                 }
             }));
             this.push(file);
