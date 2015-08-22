@@ -1,3 +1,19 @@
+## [1.0.0](https://github.com/power-assert-js/gulp-espower/releases/tag/v1.0.0) (2015-08-22)
+
+
+#### Bug Fixes
+
+* **gulp-espower:**
+  * should emit error when the file has a syntax error, even if using Streams ([a786374d](https://github.com/power-assert-js/gulp-espower/commit/a786374d01e0dd61ae8894ecbd756d15033ab7ae))
+
+
+#### Features
+
+* **gulp-espower:**
+  * transfer to power-assert-js organization ([a6df50ab](https://github.com/power-assert-js/gulp-espower/commit/a6df50abe5f0756e644b490a407ff8a6db09b732))
+  * [use file.cwd for default sourceRoot](https://github.com/power-assert-js/gulp-espower/pull/4)
+
+
 ### [0.10.1](https://github.com/power-assert-js/gulp-espower/releases/tag/v0.10.1) (2015-03-04)
 
 
