@@ -19,7 +19,7 @@
     "bufferstreams": "^1.1.0",
     "convert-source-map": "^1.1.1",
     "escodegen": "^1.6.1",
-    "espower": "^1.0.6",
+    "espower": "^1.0.7",
     "espower-source": "^1.0.0",
     "esprima": "^2.0.0",
     "gulp-util": "^3.0.5",
