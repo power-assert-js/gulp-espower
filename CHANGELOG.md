@@ -1,3 +1,11 @@
+### [1.0.1](https://github.com/power-assert-js/gulp-espower/releases/tag/v1.0.1) (2015-10-08)
+
+
+  * update espower to 1.0.7 ([5173f4b](https://github.com/power-assert-js/gulp-espower/commit/5173f4bcb034670a75442143074ad4468e5c23c1))
+  * update vinyl-sourcemaps-apply to 0.2.0 ([7ae9fcb](https://github.com/power-assert-js/gulp-espower/commit/7ae9fcb955e0476bd2dcd314a155e80d7ff4ce77))
+  * update bufferstreams to 1.1.0 ([1c19377](https://github.com/power-assert-js/gulp-espower/commit/1c19377a7786cdcaadee85882984a0bff3434731))
+
+
 ## [1.0.0](https://github.com/power-assert-js/gulp-espower/releases/tag/v1.0.0) (2015-08-22)
 
 
