@@ -96,7 +96,7 @@ module.exports = function (opt) {
               transform(file, encoding, opt);
               this.push(file);
             } catch (err) {
-              return callback(new gutil.PluginError('gulp-espoewr', err, {showStack: true}));
+              return callback(new gutil.PluginError('gulp-espower', err, {showStack: true}));
             }
         } else if (file.isStream()) {
             file.contents = file.contents.pipe(new BufferStreams(function(err, buf, cb) {
@@ -107,7 +107,7 @@ module.exports = function (opt) {
                     try {
                         modifiedCode = espowerSource(buf.toString(encoding), file.path, mergeEspowerOptions(opt, file));
                     } catch (err) {
-                        return callback(new gutil.PluginError('gulp-espoewr', err, {showStack: true}));
+                        return callback(new gutil.PluginError('gulp-espower', err, {showStack: true}));
                     }
                     cb(null, new Buffer(modifiedCode));
                 }
