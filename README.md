@@ -3,6 +3,7 @@
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
+[![License][license-image]][license-url]
 
 > A [gulp](https://github.com/gulpjs/gulp) plugin for [power-assert](https://github.com/power-assert-js/power-assert).
 
@@ -118,3 +119,6 @@ Licensed under the [MIT](https://github.com/power-assert-js/gulp-espower/blob/ma
 
 [depstat-url]: https://gemnasium.com/power-assert-js/gulp-espower
 [depstat-image]: https://gemnasium.com/power-assert-js/gulp-espower.svg
+
+[license-url]: https://github.com/power-assert-js/gulp-espower/blob/master/LICENSE-MIT
+[license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
