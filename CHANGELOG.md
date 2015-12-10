@@ -1,3 +1,11 @@
+### [1.0.2](https://github.com/power-assert-js/gulp-espower/releases/tag/v1.0.2) (2015-12-10)
+
+
+#### Bug Fixes
+
+  * fix typo in PluginError call ([070431fe](https://github.com/power-assert-js/gulp-espower/commit/070431fe6dad227dd5396da2a2d9f3b0715d8eef))
+
+
 ### [1.0.1](https://github.com/power-assert-js/gulp-espower/releases/tag/v1.0.1) (2015-10-08)
 
 
