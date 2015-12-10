@@ -4,7 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
-> A [gulp](https://github.com/wearefractal/gulp) plugin for [power-assert](http://github.com/power-assert-js/power-assert).
+> A [gulp](https://github.com/gulpjs/gulp) plugin for [power-assert](https://github.com/power-assert-js/power-assert).
 
 ## Description
 
@@ -14,7 +14,7 @@
 Internally, `gulp-espower` task uses `espower` module that manipulates assertion expression (JavaScript Code) defined in [The ESTree Spec](https://github.com/estree/estree) (formerly known as [Mozilla SpiderMonkey Parser API](https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API)), to instrument power-assert feature into the code. The magic is done by using [Esprima](http://esprima.org/) and [Escodegen](https://github.com/Constellation/escodegen).
 
 
-Pull-requests, issue reports and patches are always welcomed. See [power-assert](http://github.com/power-assert-js/power-assert) project for more documentation.
+Pull-requests, issue reports and patches are always welcomed. See [power-assert](https://github.com/power-assert-js/power-assert) project for more documentation.
 
 
 ## Usage
@@ -88,7 +88,7 @@ For more information, see [gulp-sourcemaps](https://github.com/floridoo/gulp-sou
 Target patterns for power assert feature instrumentation.
 
 If callee name (for example, `assert.equal`) matches exactly and number of arguments is satisfied, then the assertion will be modified.
-Detection is done by [escallmatch](http://github.com/twada/escallmatch). Any arguments enclosed in bracket (for example, `[message]`) means optional parameters. Without bracket means mandatory parameters.
+Detection is done by [escallmatch](https://github.com/twada/escallmatch). Any arguments enclosed in bracket (for example, `[message]`) means optional parameters. Without bracket means mandatory parameters.
 
 
 ## CHANGELOG
@@ -98,7 +98,7 @@ See [CHANGELOG](https://github.com/power-assert-js/gulp-espower/blob/master/CHAN
 
 ## AUTHOR
 
-* [Takuto Wada](http://github.com/twada)
+* [Takuto Wada](https://github.com/twada)
 
 
 ## CONTRIBUTORS
@@ -113,7 +113,7 @@ Licensed under the [MIT](https://github.com/power-assert-js/gulp-espower/blob/ma
 [npm-url]: https://npmjs.org/package/gulp-espower
 [npm-image]: https://badge.fury.io/js/gulp-espower.svg
 
-[travis-url]: http://travis-ci.org/power-assert-js/gulp-espower
+[travis-url]: https://travis-ci.org/power-assert-js/gulp-espower
 [travis-image]: https://secure.travis-ci.org/power-assert-js/gulp-espower.svg?branch=master
 
 [depstat-url]: https://gemnasium.com/power-assert-js/gulp-espower
