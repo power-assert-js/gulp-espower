@@ -1,7 +1,7 @@
 # gulp-espower
 
-[![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url]
 [![Dependency Status][depstat-image]][depstat-url]
 [![License][license-image]][license-url]
 
@@ -39,7 +39,7 @@ gulp.src('./test/*.js')
 
 ## Source maps
 
-gulp-espower can be used with [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) to generate source maps for the instrumented javascript code. Note that you should `init` gulp-sourcemaps prior to running the gulp-espower and `write` the source maps after. gulp-espower works well with some gulp plugins that supports [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps).
+gulp-espower works with [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) to generate source maps for the instrumented javascript code. Note that you should `init` gulp-sourcemaps prior to running the gulp-espower and `write` the source maps after. gulp-espower works well with some gulp plugins that supports [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps).
 
 ```javascript
 var espower = require('gulp-espower');

@@ -1,5 +1,5 @@
 /**
- * gulp-espower - A gulp plugin to apply espower to target files.
+ * gulp-espower - A gulp plugin for power-assert.
  * 
  * https://github.com/power-assert-js/gulp-espower
  *
