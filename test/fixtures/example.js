@@ -1,4 +1,4 @@
-var assert = require('power-assert'),
+var assert = require('assert'),
     truthy = 'true',
     falsy = 'false';
 assert(falsy);

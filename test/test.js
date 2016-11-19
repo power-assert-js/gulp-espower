@@ -100,7 +100,7 @@ describe("gulp-espower", function () {
                         ],
                         mappings: 'AAAA,IAAAA,qBAAA;AAAA,aAAAC,mBAAA;AAAA,aAAAC,QAAA;AAAA;AAAA,IAAAD,mBAAA,CAAAE,SAAA,CAAAC,KAAA,YAAAA,KAAA,CAAAC,KAAA,EAAAC,MAAA;AAAA,aAAAJ,QAAA,CAAAK,IAAA;AAAA,YAAAF,KAAA,EAAAA,KAAA;AAAA,YAAAC,MAAA,EAAAA,MAAA;AAAA;AAAA,eAAAD,KAAA;AAAA;AAAA,IAAAJ,mBAAA,CAAAE,SAAA,CAAAK,KAAA,YAAAA,KAAA,CAAAH,KAAA,EAAAI,MAAA;AAAA;AAAA,YAAAC,kBAAA;AAAA,gBAAAL,KAAA,EAAAA,KAAA;AAAA,gBAAAM,MAAA,OAAAT,QAAA;AAAA;AAAA,YAAAO,MAAA,EAAAA,MAAA;AAAA;AAAA;AAAA,WAAAR,mBAAA;AAAA;AAGO,IAAAW,KAAA,OAAAZ,qBAAA,GAHP;AAIa,IAAAa,KAAA,OAAAb,qBAAA,GAJb;AAIqB,IAAAc,KAAA,OAAAd,qBAAA,GAJrB;AAAA,IAAIe,MAAA,GAASC,OAAA,CAAQ,cAAR,CAAb,EACIC,MAAA,GAAS,MADb,EAEIC,KAAA,GAAQ,OAFZ;AAGAH,MAAA,CAAOH,KAAA,CAAAJ,KAAA,CAAAI,KAAA,CAAAR,KAAA,CAAAc,KAAA;AAAA,IAAAC,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EAHA;AAIAN,MAAA,CAAOO,KAAP,CAAaT,KAAA,CAAAL,KAAA,CAAAK,KAAA,CAAAT,KAAA,CAAAa,MAAA;AAAA,IAAAE,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAb,EAAqBP,KAAA,CAAAN,KAAA,CAAAM,KAAA,CAAAV,KAAA,CAAAc,KAAA;AAAA,IAAAC,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAArB',
                         file: 'example.js',
-                        sourcesContent: [ 'var assert = require(\'power-assert\'),\n    truthy = \'true\',\n    falsy = \'false\';\nassert(falsy);\nassert.equal(truthy, falsy);\n' ] 
+                        sourcesContent: [ 'var assert = require(\'assert\'),\n    truthy = \'true\',\n    falsy = \'false\';\nassert(falsy);\nassert.equal(truthy, falsy);\n' ] 
                     });
                     done();
                 });

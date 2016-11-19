@@ -13,6 +13,9 @@ var through = require('through2');
 var gutil = require('gulp-util');
 var extend = require('xtend');
 var BufferStreams = require('bufferstreams');
+var mergeVisitors = require('merge-estraverse-visitors');
+var empowerAssert = require('empower-assert');
+var estraverse = require('estraverse');
 var espower = require('espower');
 var espowerSource = require('espower-source');
 var esprima = require('esprima');
@@ -60,7 +63,12 @@ function transform (file, encoding, opt) {
             sourceMapWithCode: true
         });
     }
-    var modifiedAst = espower(jsAst, espowerOptions);
+    var modifiedAst = estraverse.replace(jsAst, mergeVisitors([
+        {
+            enter: empowerAssert.enter
+        },
+        espower.createVisitor(jsAst, espowerOptions)
+    ]));
     var escodegenOutput = escodegen.generate(modifiedAst, escodegenOptions);
     if (inMap) {
         file.contents = new Buffer(escodegenOutput.code);
