@@ -74,20 +74,33 @@ describe("gulp-espower", function () {
                             'example.js'
                         ],
                         names: [
+                            '_PowerAssertRecorder1',
+                            'PowerAssertRecorder',
+                            'captured',
+                            'prototype',
+                            '_capt',
+                            'value',
+                            'espath',
+                            'push',
+                            '_expr',
+                            'source',
+                            'powerAssertContext',
+                            'events',
+                            '_rec1',
+                            '_rec2',
+                            '_rec3',
                             'assert',
                             'require',
                             'truthy',
                             'falsy',
-                            '_expr',
-                            '_capt',
                             'content',
                             'filepath',
                             'line',
                             'equal'
                         ],
-                        mappings: 'AAAA,IAAIA,MAAA,GAASC,OAAA,CAAQ,cAAR,CAAb,EACIC,MAAA,GAAS,MADb,EAEIC,KAAA,GAAQ,OAFZ;AAGAH,MAAA,CAAOA,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EAHA;AAIAR,MAAA,CAAOS,KAAP,CAAaT,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAb,EAAqBR,MAAA,CAAAI,KAAA,CAAAJ,MAAA,CAAAK,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAArB',
+                        mappings: 'AAAA,IAAAA,qBAAA;AAAA,aAAAC,mBAAA;AAAA,aAAAC,QAAA;AAAA;AAAA,IAAAD,mBAAA,CAAAE,SAAA,CAAAC,KAAA,YAAAA,KAAA,CAAAC,KAAA,EAAAC,MAAA;AAAA,aAAAJ,QAAA,CAAAK,IAAA;AAAA,YAAAF,KAAA,EAAAA,KAAA;AAAA,YAAAC,MAAA,EAAAA,MAAA;AAAA;AAAA,eAAAD,KAAA;AAAA;AAAA,IAAAJ,mBAAA,CAAAE,SAAA,CAAAK,KAAA,YAAAA,KAAA,CAAAH,KAAA,EAAAI,MAAA;AAAA;AAAA,YAAAC,kBAAA;AAAA,gBAAAL,KAAA,EAAAA,KAAA;AAAA,gBAAAM,MAAA,OAAAT,QAAA;AAAA;AAAA,YAAAO,MAAA,EAAAA,MAAA;AAAA;AAAA;AAAA,WAAAR,mBAAA;AAAA;AAGO,IAAAW,KAAA,OAAAZ,qBAAA,GAHP;AAIa,IAAAa,KAAA,OAAAb,qBAAA,GAJb;AAIqB,IAAAc,KAAA,OAAAd,qBAAA,GAJrB;AAAA,IAAIe,MAAA,GAASC,OAAA,CAAQ,cAAR,CAAb,EACIC,MAAA,GAAS,MADb,EAEIC,KAAA,GAAQ,OAFZ;AAGAH,MAAA,CAAOH,KAAA,CAAAJ,KAAA,CAAAI,KAAA,CAAAR,KAAA,CAAAc,KAAA;AAAA,IAAAC,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EAHA;AAIAN,MAAA,CAAOO,KAAP,CAAaT,KAAA,CAAAL,KAAA,CAAAK,KAAA,CAAAT,KAAA,CAAAa,MAAA;AAAA,IAAAE,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAb,EAAqBP,KAAA,CAAAN,KAAA,CAAAM,KAAA,CAAAV,KAAA,CAAAc,KAAA;AAAA,IAAAC,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAArB',
                         file: 'example.js',
-                        sourcesContent: [ 'var assert = require(\'power-assert\'),\n    truthy = \'true\',\n    falsy = \'false\';\nassert(falsy);\nassert.equal(truthy, falsy);\n' ] 
+                        sourcesContent: [ 'var assert = require(\'assert\'),\n    truthy = \'true\',\n    falsy = \'false\';\nassert(falsy);\nassert.equal(truthy, falsy);\n' ] 
                     });
                     done();
                 });
@@ -166,6 +179,22 @@ describe("gulp-espower", function () {
                             'customized.js'
                         ],
                         names: [
+                            '_PowerAssertRecorder1',
+                            'PowerAssertRecorder',
+                            'captured',
+                            'prototype',
+                            '_capt',
+                            'value',
+                            'espath',
+                            'push',
+                            '_expr',
+                            'source',
+                            'powerAssertContext',
+                            'events',
+                            '_rec1',
+                            '_rec2',
+                            '_rec3',
+                            '_rec4',
                             'empower',
                             'require',
                             'formatter',
@@ -176,15 +205,13 @@ describe("gulp-espower", function () {
                             'twoArgs',
                             'truthy',
                             'falsy',
-                            '_expr',
-                            '_capt',
                             'content',
                             'filepath',
                             'line',
                             'isNull',
                             'same'
                         ],
-                        mappings: 'AAAA,IAAIA,OAAA,GAAUC,OAAA,CAAQ,SAAR,CAAd,EACIC,SAAA,GAAYD,OAAA,CAAQ,wBAAR,CADhB,EAEIE,gBAAA,GAAmBF,OAAA,CAAQ,mBAAR,CAFvB,EAGIG,MAAA,GAASJ,OAAA,CAAQG,gBAAA,CAAiBC,MAAzB,EAAiCF,SAAA,EAAjC,EAA8C;AAAA,QAAEG,aAAA,EAAe;AAAA,YAAEC,MAAA,EAAQ,CAAC,QAAD,CAAV;AAAA,YAAsBC,OAAA,EAAS,CAAC,MAAD,CAA/B;AAAA,SAAjB;AAAA,KAA9C,CAHb,EAIIC,MAAA,GAAS,MAJb,EAKIC,KAAA,GAAQ,OALZ;AAMAL,MAAA,CAAOA,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EANA;AAOAV,MAAA,CAAOW,MAAP,CAAcX,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAd,EAPA;AAQAV,MAAA,CAAOY,IAAP,CAAYZ,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAH,MAAA;AAAA,IAAAI,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAZ,EAAoBV,MAAA,CAAAM,KAAA,CAAAN,MAAA,CAAAO,KAAA,CAAAF,KAAA;AAAA,IAAAG,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAApB',
+                        mappings: 'AAAA,IAAAA,qBAAA;AAAA,aAAAC,mBAAA;AAAA,aAAAC,QAAA;AAAA;AAAA,IAAAD,mBAAA,CAAAE,SAAA,CAAAC,KAAA,YAAAA,KAAA,CAAAC,KAAA,EAAAC,MAAA;AAAA,aAAAJ,QAAA,CAAAK,IAAA;AAAA,YAAAF,KAAA,EAAAA,KAAA;AAAA,YAAAC,MAAA,EAAAA,MAAA;AAAA;AAAA,eAAAD,KAAA;AAAA;AAAA,IAAAJ,mBAAA,CAAAE,SAAA,CAAAK,KAAA,YAAAA,KAAA,CAAAH,KAAA,EAAAI,MAAA;AAAA;AAAA,YAAAC,kBAAA;AAAA,gBAAAL,KAAA,EAAAA,KAAA;AAAA,gBAAAM,MAAA,OAAAT,QAAA;AAAA;AAAA,YAAAO,MAAA,EAAAA,MAAA;AAAA;AAAA;AAAA,WAAAR,mBAAA;AAAA;AAMO,IAAAW,KAAA,OAAAZ,qBAAA,GANP;AAOc,IAAAa,KAAA,OAAAb,qBAAA,GAPd;AAQY,IAAAc,KAAA,OAAAd,qBAAA,GARZ;AAQoB,IAAAe,KAAA,OAAAf,qBAAA,GARpB;AAAA,IAAIgB,OAAA,GAAUC,OAAA,CAAQ,SAAR,CAAd,EACIC,SAAA,GAAYD,OAAA,CAAQ,wBAAR,CADhB,EAEIE,gBAAA,GAAmBF,OAAA,CAAQ,mBAAR,CAFvB,EAGIG,MAAA,GAASJ,OAAA,CAAQG,gBAAA,CAAiBC,MAAzB,EAAiCF,SAAA,EAAjC,EAA8C;AAAA,QAAEG,aAAA,EAAe;AAAA,YAAEC,MAAA,EAAQ,CAAC,QAAD,CAAV;AAAA,YAAsBC,OAAA,EAAS,CAAC,MAAD,CAA/B;AAAA,SAAjB;AAAA,KAA9C,CAHb,EAIIC,MAAA,GAAS,MAJb,EAKIC,KAAA,GAAQ,OALZ;AAMAL,MAAA,CAAOR,KAAA,CAAAJ,KAAA,CAAAI,KAAA,CAAAR,KAAA,CAAAoB,MAAA;AAAA,IAAAE,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAP,EANA;AAOAR,MAAA,CAAOS,MAAP,CAAchB,KAAA,CAAAL,KAAA,CAAAK,KAAA,CAAAT,KAAA,CAAAqB,KAAA;AAAA,IAAAC,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAd,EAPA;AAQAR,MAAA,CAAOU,IAAP,CAAYhB,KAAA,CAAAN,KAAA,CAAAM,KAAA,CAAAV,KAAA,CAAAoB,MAAA;AAAA,IAAAE,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAAZ,EAAoBb,KAAA,CAAAP,KAAA,CAAAO,KAAA,CAAAX,KAAA,CAAAqB,KAAA;AAAA,IAAAC,OAAA;AAAA,IAAAC,QAAA;AAAA,IAAAC,IAAA;AAAA,EAApB',
                         file: 'customized.js',
                         sourcesContent: [ 'var empower = require(\'empower\'),\n    formatter = require(\'power-assert-formatter\'),\n    busterAssertions = require("buster-assertions"),\n    refute = empower(busterAssertions.refute, formatter(), { targetMethods: { oneArg: [\'isNull\'], twoArgs: [\'same\'] } }),\n    truthy = \'true\',\n    falsy = \'false\';\nrefute(truthy);\nrefute.isNull(falsy);\nrefute.same(truthy, falsy);\n' ]
                     });
