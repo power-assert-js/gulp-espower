@@ -25,6 +25,7 @@
     "esprima": "^2.0.0",
     "estraverse": "^4.0.0",
     "gulp-util": "^3.0.5",
+    "merge-estraverse-visitors": "^1.0.0",
     "multi-stage-sourcemap": "^0.2.1",
     "through2": "^2.0.0",
     "vinyl-sourcemaps-apply": "^0.2.0",
