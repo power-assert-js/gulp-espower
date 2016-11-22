@@ -1,3 +1,11 @@
+## [1.1.0](https://github.com/power-assert-js/gulp-espower/releases/tag/v1.1.0) (2016-11-22)
+
+
+#### Features
+
+  * [Enable transparent assertion enhancement, embed value capturing helper into transpiled code (by upgrading espower-source to 2.0.0)](https://github.com/power-assert-js/gulp-espower/pull/6)
+
+
 ### [1.0.2](https://github.com/power-assert-js/gulp-espower/releases/tag/v1.0.2) (2015-12-10)
 
 
@@ -19,13 +27,11 @@
 
 #### Bug Fixes
 
-* **gulp-espower:**
   * should emit error when the file has a syntax error, even if using Streams ([a786374d](https://github.com/power-assert-js/gulp-espower/commit/a786374d01e0dd61ae8894ecbd756d15033ab7ae))
 
 
 #### Features
 
-* **gulp-espower:**
   * transfer to power-assert-js organization ([a6df50ab](https://github.com/power-assert-js/gulp-espower/commit/a6df50abe5f0756e644b490a407ff8a6db09b732))
   * [use file.cwd for default sourceRoot](https://github.com/power-assert-js/gulp-espower/pull/4)
 
@@ -35,14 +41,12 @@
 
 #### Bug Fixes
 
-* **gulp-espower:**
   * fix a bug that throw an error when the file has a syntax error ([603a681b](https://github.com/power-assert-js/gulp-espower/commit/603a681b9be2b809970c9aa89052d954feb2134b)) (by @bouzuya)
 
 
 ## [0.10.0](https://github.com/power-assert-js/gulp-espower/releases/tag/v0.10.0) (2014-11-11)
 
 
-* **gulp-espower:**
   * update espower and espower-source to 0.10.0 ([724aead0](https://github.com/power-assert-js/gulp-espower/commit/724aead0ac2ec8be7572eb133956729813d56518))
   * update vinyl-sourcemaps-apply ([c19ca9ab](https://github.com/power-assert-js/gulp-espower/commit/c19ca9abe9da0eec3c8134e63ccd72ec240092e5))
 
@@ -52,7 +56,7 @@
 
 #### Features
 
-* **gulp-espower:** update espower and espower-source to 0.9.1 ([681f1ab9](https://github.com/power-assert-js/gulp-espower/commit/681f1ab9b786066fd66236686f0f118470851ef5))
+  * update espower and espower-source to 0.9.1 ([681f1ab9](https://github.com/power-assert-js/gulp-espower/commit/681f1ab9b786066fd66236686f0f118470851ef5))
 
 
 ## 0.9.0 (2014-09-02)
@@ -60,7 +64,6 @@
 
 #### Features
 
-* **gulp-espower:**
   * gulp-sourcemaps support ([caf2a275](https://github.com/power-assert-js/gulp-espower/commit/caf2a275aa26a1ce2ff43b024d73a8dc055feb3d))
   * keep paths relative until the end of chain ([9dc8f50b](https://github.com/power-assert-js/gulp-espower/commit/9dc8f50b0ecf3a0d77c472bf75e7730a54748c9f))
 
@@ -70,7 +73,6 @@
 
 #### Features
 
-* **gulp-espower:**
   * update espower-source to 0.8.0 ([a9ab1f7d](https://github.com/power-assert-js/gulp-espower/commit/a9ab1f7de7275b717589bd8eb8048b89bc575763))
   * now supports streams as well ([ada19f90](https://github.com/power-assert-js/gulp-espower/commit/ada19f90f0dfc674405342310259e31ddd3a6dd0))
 
