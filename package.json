@@ -1,7 +1,7 @@
 {
   "name": "gulp-espower",
   "description": "A gulp plugin for power-assert",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": {
     "name": "Takuto Wada",
     "email": "takuto.wada@gmail.com",
