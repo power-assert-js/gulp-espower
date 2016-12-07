@@ -103,7 +103,7 @@ We support Node under maintenance. In other words, we stop supporting old Node v
 
 This means that any other environment is not supported.
 
-NOTE: If espower-cli works in any of the unsupported environments, it is purely coincidental and has no bearing on future compatibility. Use at your own risk.
+NOTE: If gulp-espower works in any of the unsupported environments, it is purely coincidental and has no bearing on future compatibility. Use at your own risk.
 
 
 ## AUTHOR
