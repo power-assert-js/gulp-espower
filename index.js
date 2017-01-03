@@ -38,9 +38,7 @@ function mergeEspowerOptions (options, file) {
     return extend(espower.defaultOptions(), {
         sourceRoot: file.cwd,
         path: file.path
-    }, options, {
-        destructive: true
-    });
+    }, options);
 }
 
 function transform (file, encoding, opt) {
